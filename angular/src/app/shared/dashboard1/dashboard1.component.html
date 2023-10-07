@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="preloader flex-column justify-content-center align-items-center" *ngIf="loading">
+      <img class="animation__wobble" src="assets/img/img.png" alt="AdminLTELogo" height="60" width="60">
+    </div>
+
+
+
+      <!-- /.navbar -->
+      <app-header-layout></app-header-layout>
+      <div class="sidebar-wrapper">
+        <!-- Main Sidebar Container -->
+        <app-admin-layout></app-admin-layout>
+      </div>
+
+      <div class="content-wrapper">
+
+
+
+         <app-transaction></app-transaction>
+      </div>
+    <aside class="control-sidebar control-sidebar-dark">
+
+    </aside>
+    <app-footer-layout></app-footer-layout>
+      </div>
+</body>
+</html>
+
+
+
+
+

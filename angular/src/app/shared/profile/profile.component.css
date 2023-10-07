@@ -1,0 +1,14 @@
+/* styles.css */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  section {
+    flex: 1;
+  }
+
+  .app-footer {
+    margin-top: auto;
+  }
