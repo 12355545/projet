@@ -10,7 +10,7 @@ services:
     environment:
       MSSQL_SA_PASSWORD: "yourStrong(!)Password"
       ACCEPT_EULA: "Y"
-    mem_limit: 2g
+     
     ports:
       - "1433:1433"
      
