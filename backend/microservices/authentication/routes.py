@@ -106,6 +106,10 @@ class LoginResponse(BaseModel):
     id: int
 @routers.post('/sign-up',response_model=LoginResponse,tags=common_tags)
 def login(request: Login):
+    conn_str = "DRIVER={ODBC Driver 17 for SQL Server}; SERVER=mysql-db,1433; DATABASE=users;UID=sa;PWD=yourStrong(!)Password"
+     
+        
+    db_connection = pyodbc.connect(conn_str)
     cursor = db_connection.cursor()
     cursor.execute("""
         SELECT U.*, R.name as role_name 
@@ -117,6 +121,7 @@ def login(request: Login):
         WHERE U.email = ?
     """, (request.email,))
     user = cursor.fetchone()
+    db_connection.close()  
     if not user:
         raise HTTPException(status_code=404, detail=f'No user found with the email: {request.email}')
     if not Hash.verify(user.hashed_password, request.password):
@@ -127,6 +132,8 @@ def login(request: Login):
 
     access_token = create_access_token(data={"sub": user.role_name })
     return {"access_token": access_token, "token_type": "bearer", "full_name": user.full_name, "id": user.id}
+
+    
 
 
 class PasswordChangeRequest(BaseModel):
