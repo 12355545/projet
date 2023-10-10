@@ -6,7 +6,8 @@ FROM python:3.11.2-slim-buster
 ENV PYTHONDONTWRITEBYTECODE 1
 # Prevents Python from buffering stdout and stderr (equivalent to python -u option)
 ENV PYTHONUNBUFFERED 1
-
+# Install ODBC libraries
+RUN apt-get update && apt-get install -y unixodbc unixodbc-dev
 # Set the working directory in the container
 WORKDIR /backend
 
