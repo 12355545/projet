@@ -17,8 +17,7 @@ from .hashing import Hash,pwd_cxt
 
 from .jwttoken import create_access_token
 routers = APIRouter()
-conn_str = "driver={ODBC Driver 17 for SQL Server}; server=192.168.138.122,1433; database=users;UID=sa ;PWD=yourStrong(!)Password"
-db_connection = pyodbc.connect(conn_str)
+ 
 
 common_tags = ["Authentication"]
 
