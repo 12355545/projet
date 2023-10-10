@@ -22,7 +22,7 @@ WORKDIR /backend
 # Copy requirements file separately and install dependencies first for caching
 COPY requirements.txt /backend/
 RUN python -m venv venv
-RUN /backend1/venv/bin/pip install -r requirements.txt
+RUN /backend/venv/bin/pip install -r requirements.txt
 
 # Install uvicorn
 RUN /backend/venv/bin/pip install uvicorn
@@ -32,4 +32,4 @@ COPY . /backend/
 
 # Expose port and define command
 EXPOSE 80
-CMD ["/backend1/venv/bin/uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["/backend/venv/bin/uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
