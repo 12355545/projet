@@ -24,7 +24,7 @@ async def connect_database(request: ConnectionRequest):
     global SessionLocal
     global_variable = request.database
     params = urllib.parse.quote_plus(
-        f"driver={{ODBC Driver 17 for SQL Server}}; server=192.168.138.122,1433; database={global_variable}; UID=sa;PWD=yourStrong(!)Password"
+        f"driver={{ODBC Driver 17 for SQL Server}}; server=192.168.231.122,1433; database={global_variable}; UID=sa;PWD=yourStrong(!)Password"
     )
 
     # Create the SQLAlchemy engine
