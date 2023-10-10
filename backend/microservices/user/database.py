@@ -7,7 +7,7 @@ from sqlalchemy.orm import declarative_base
 
 import urllib
 
-params = urllib.parse.quote_plus("driver={ODBC Driver 17 for SQL Server}; server=DESKTOP-M34IJQI; database=users;Trusted_Connection=yes;UID=DESKTOP-M34IJQI\med aziz")
+params = urllib.parse.quote_plus("driver={ODBC Driver 17 for SQL Server}; server=192.168.138.122,1433; database=users;Trusted_Connection=yes;UID=DESKTOP-M34IJQI\med aziz")
 engine = create_engine("mssql+pyodbc:///?odbc_connect=%s" % params)
 
  
