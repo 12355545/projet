@@ -189,7 +189,7 @@ class Role(Base):
 class User(Base):
     __tablename__ = 'utilisateur'
     __table_args__ = {"schema": "dbo"}
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     full_name = Column(String)
     email = Column(String, unique=True)
     hashed_password = Column(String)
