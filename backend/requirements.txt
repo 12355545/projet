@@ -23,5 +23,5 @@ SQLAlchemy
 starlette
 typing_extensions
 uvicorn
-
+httpx
 python-multipart
