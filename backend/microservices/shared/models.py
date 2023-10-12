@@ -68,7 +68,7 @@ class Client(Base):
     Code2 = Column(VARCHAR(100), nullable=True )
     Code3 = Column(VARCHAR(100), nullable=True )
     Code4 = Column(VARCHAR(100), nullable=True )
-    #created_at =Column(TIMESTAMP(timezone=True),nullable=False,server_default=text('now()'))
+     
     class Config:
 	    orm_mode=True
         
