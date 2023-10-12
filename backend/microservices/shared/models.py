@@ -15,7 +15,7 @@ Base = declarative_base()
 class Client(Base):
     __tablename__ = "Clients"
     __table_args__ = {"schema": "dbo"}  # Optional: specify the schema name
-    #id = Column(Integer, primary_key=True, autoincrement=True) 
+    
     
     CodeEntite = Column(VARCHAR(4), nullable=False)
     CodeClient = Column(VARCHAR(8), nullable=False,primary_key=True)
